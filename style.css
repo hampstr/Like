@@ -1,0 +1,275 @@
+
+
+:root {
+    --bg: rgb(16, 16, 16);
+    --primary: rgb(26, 111, 195);
+    --secondary: rgb(195, 26, 26);
+}
+
+@font-face { 
+    font-family: 'Raleway';
+    src: url('Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: Raleway;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#titleCont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: #F1F7ED; */
+    color: #ffffff;
+    font-size: 50px;
+}
+
+#titleCont h1 {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.68);
+}
+
+#buttonCont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+
+#buttonCont button {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.68);
+    background-color: #2a69d7;
+    font-family: Raleway;
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 2%;
+    text-align: center;
+    transition: ease-in-out 0.1s;
+    transform: scale(1);
+    cursor: pointer;
+    border-style: solid;
+    border-color: #2059c3;
+    border-width: 4px;
+}
+
+#buttonCont button:hover {
+    transition: ease-in-out 0.05s;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+#buttonCont button:active {
+    transform: scale(1.03);
+}
+
+
+
+
+
+
+@media (max-width: 614px) {
+    #buttonCont button {
+        width: 70%;
+    }
+}
+
+
+#gameContainer {
+    z-index: 10000;
+    width: 80vh;
+    height: 80vh;
+    display: flex;
+    background-color: rgb(11, 11, 11);
+    justify-content: space-between;
+    flex-direction: column;
+    box-shadow: 0px 0px 12px rgba(234, 234, 234, 0.5);
+}
+
+#parentGameContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gameBox {
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-width: 10px;
+    border-left: 10px;
+}
+
+.gameRow {
+    height: 100%; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left {
+    border-style: solid;
+    border-width: 10px;
+}
+
+@media (max-width: 810px) {
+    #gameContainer {
+        transform: scale(0.5);
+        aspect-ratio: 1/1;
+    }
+    #backCont {
+        margin-top: 1px; 
+        margin-bottom: 150px;
+    }
+    #winScreen {
+        font-size: 1em;
+    }
+}
+@media (max-width: 320px) {
+    #gameContainer {
+        transform: scale(0.3);
+        aspect-ratio: 1/1;
+    }
+    #backCont {
+        margin-top: 1px; 
+        margin-bottom: 150px;
+    }
+    #winScreen {
+        font-size: 2em;
+    }
+}
+
+#backCont {
+    margin-top: 10px; 
+}
+
+
+
+#backToMM {
+    cursor: pointer;
+    font-family: Raleway;
+    font-size: 2em;
+    height: 80px;
+    width: 80px;
+    border-radius: 200px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ffffff;
+    background-color: #e2e2e2;
+    transition: ease-in-out 0.08s;
+}
+
+#backToMM:hover {
+    transform: scale(.96);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.68) inset;
+
+}
+
+#winScreen {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    color: #ffffff;
+    font-size: 2em;
+}
+
+#winScreenButtonCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-direction: column;
+    font-family: Raleway;
+}
+
+#winScreenButtonCont button {
+    margin: 20px;
+    padding: 30px;
+    cursor: pointer;
+    font-family: Raleway;
+    font-size: 1em;
+    border-color: #ffffff;
+    background-color: #e2e2e2;
+    border-radius: 200px;
+    border-style: solid;
+    transition: ease-in-out 0.08s;
+}
+
+#winScreenButtonCont button p {
+    font-size: 20px;
+    margin: 0;
+}
+
+
+#winScreenButtonCont button:hover {
+    transform: scale(.96);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.68) inset;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+hr {
+    width: 50%;
+    margin: 20px;
+    border: 5px solid #ffffff1d;
+    border-radius: 10px;
+}
+
+.rainbow {
+    background-image: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#tutorialCont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+    color: #ffffff;
+    font-size: 2em;
+    text-align: center;
+}
+
+#tutorialCont ul {
+    list-style-type:none;
+    padding: 0;
+    /* padding-left: 20px; */
+}
+
+#tutorialCont ul li {
+    margin-bottom: 70px;
+}
+
+
